@@ -1,5 +1,13 @@
 body {
     font-family: 'Jolly Lodger', cursive;
     font-family: 'Nosifer', cursive;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(to bottom, #051937, #171228, #190a1a, #12040d, #000000);
+   
 }
+
+
 
