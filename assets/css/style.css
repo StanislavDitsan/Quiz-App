@@ -19,7 +19,7 @@ body {
 }
 
 h1 {
-    font-size: 7rem;
+    font-size: 9rem;
     margin-bottom: 5rem;
     font-family: 'Jolly Lodger', cursive;
 }
@@ -48,3 +48,24 @@ h1 {
     align-items: center;
 }
 
+
+/* Buttons */
+
+
+.btn {
+    font-size: 4rem;
+    padding: 1rem 0;
+    width: 8rem;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Jolly Lodger', cursive;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1.6rem 0 rgba(red, rgb(3, 11, 3), rgb(240, 101, 20), 0.5);
+    transform: translateY(-0.6rem);
+    transition: 300ms;
+    color: red;
+    transition: color 1.9s ;
+}
