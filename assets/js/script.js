@@ -61,5 +61,20 @@ let questions = [
         answer: 2
     },
     
-]
+];
+
+// Constants for the game.
+const correctBonus = 100;
+// How many questions user gets before the game finish.
+const maxQuestions = 6;
+
+startGame = () => {
+    // Starting questionCounter game with 0.
+    questionCounter = 0;
+    score = 0;
+    // Using spread operator to add all the questions. 
+    availableQuestions = [...questions]
+    console.log(availableQuestions);
+    getNewQuestion();
+};
 
