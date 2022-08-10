@@ -78,3 +78,27 @@ startGame = () => {
     getNewQuestion();
 };
 
+// Function to get the questions.
+getNewQuestion = () => {
+
+    questionCounter++;
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionIndex];
+    question.innerText = currentQuestion.question;
+
+    // Gets the data number from the option.
+    option.forEach( option => {
+        const number = option.dataset['number'];
+        option.innerText = currentQuestion['option' + number];
+    })
+    //modifies the original array and returns the removed elements as a new array.
+    availableQuestions.splice(questionIndex, 1);
+
+    acceptingAnswers = true;
+};
+
+
+
+
+// Start game function.
+startGame();
