@@ -95,8 +95,26 @@ getNewQuestion = () => {
     availableQuestions.splice(questionIndex, 1);
 
     acceptingAnswers = true;
+
+    // When out of questions moves to the end page.
+    if(availableQuestions.length === 0 || questionCounter >= maxQuestions){
+        return window.location.assign('/end.html');
+    }
 };
 
+// Event listener for every click it moves to a new question.
+option.forEach(option => {
+    option.addEventListener("click", i => { 
+        if(!acceptingAnswers) return;
+
+        acceptingAnswers = false;
+        const selectedOption = i.target;
+        const selectedAnswer = selectedOption.dataset["number"];
+        console.log(selectedAnswer);
+// Gets new question after the answer.
+        getNewQuestion();
+    });
+});
 
 
 
