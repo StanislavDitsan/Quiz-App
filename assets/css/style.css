@@ -24,6 +24,11 @@ h1 {
     font-family: 'Jolly Lodger', cursive;
 }
 
+h2 {
+    font-size: 5rem;
+    font-family: 'Jolly Lodger', cursive;
+}
+
 
 /* Utilities */
 
@@ -63,9 +68,7 @@ h1 {
 
 .btn:hover {
     cursor: pointer;
-    box-shadow: 0 0.5rem 1.6rem 0 rgba(red, rgb(3, 11, 3), rgb(240, 101, 20), 0.5);
     transform: translateY(-0.6rem);
-    transition: 300ms;
     color: red;
-    transition: color 1.9s ;
+    transition: color 1.9s;
 }
