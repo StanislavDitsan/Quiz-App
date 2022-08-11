@@ -22,3 +22,18 @@
     width: 100%;
     padding: 1.4rem;
 }
+
+/* Correct and wrong answers */
+.correct {
+    border: 1px solid rgb(255, 255, 255);
+    outline-style: solid;
+    outline-color: green;
+    background-color: green !important;
+}
+
+.incorrect {
+    border: 1px solid rgb(255, 255, 255);
+    outline-style: solid;
+    outline-color: red;
+    background-color: rgba(255, 0, 0, 0.488) !important; 
+}

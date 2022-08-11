@@ -73,8 +73,8 @@ startGame = () => {
     questionCounter = 0;
     score = 0;
     // Using spread operator to add all the questions. 
-    availableQuestions = [...questions]
-    console.log(availableQuestions);
+    availableQuestions = [...questions];
+
     getNewQuestion();
 };
 
@@ -110,9 +110,16 @@ option.forEach(option => {
         acceptingAnswers = false;
         const selectedOption = i.target;
         const selectedAnswer = selectedOption.dataset["number"];
-        console.log(selectedAnswer);
-// Gets new question after the answer.
+// Applying correct and incorrect answers
+        const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+        
+        selectedOption.parentElement.classList.add(classToApply);
+        // 1 sec times before moving to the next question.
+        setTimeout (() => {
+            selectedOption.parentElement.classList.remove(classToApply);
+            // Gets new question after the answer.
         getNewQuestion();
+        }, 1000);
     });
 });
 
