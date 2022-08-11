@@ -2,7 +2,9 @@
 const question = document.getElementById("question");
 // Converting this to an array.
 const option = Array.from(document.getElementsByClassName("option-text"));
-
+// Question  and score counter.
+const questionCounterResult = document.getElementById('questionCounter');
+const scoreResult = document.getElementById('score');
 // Variables.
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -11,8 +13,7 @@ let questionCounter = 0;
 let availableQuestions = [];
 
 // Question field.
-let questions = [
-    {
+let questions = [{
         question: "What is the word Halloween an abbreviation of?",
         option1: "All Hallow's Eve",
         option2: "All Hallows Day",
@@ -60,7 +61,7 @@ let questions = [
         option4: "Ed Gein",
         answer: 2
     },
-    
+
 ];
 
 // Constants for the game.
@@ -82,12 +83,15 @@ startGame = () => {
 getNewQuestion = () => {
 
     questionCounter++;
+    // Updates question counter number.
+    questionCounterResult.innerText = questionCounter + "/" + maxQuestions;
+
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
 
     // Gets the data number from the option.
-    option.forEach( option => {
+    option.forEach(option => {
         const number = option.dataset['number'];
         option.innerText = currentQuestion['option' + number];
     })
@@ -97,32 +101,43 @@ getNewQuestion = () => {
     acceptingAnswers = true;
 
     // When out of questions moves to the end page.
-    if(availableQuestions.length === 0 || questionCounter >= maxQuestions){
+    if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
         return window.location.assign('/end.html');
     }
 };
 
 // Event listener for every click it moves to a new question.
 option.forEach(option => {
-    option.addEventListener("click", i => { 
-        if(!acceptingAnswers) return;
+    option.addEventListener("click", i => {
+        if (!acceptingAnswers) return;
 
         acceptingAnswers = false;
         const selectedOption = i.target;
         const selectedAnswer = selectedOption.dataset["number"];
-// Applying correct and incorrect answers
+        // Applying correct and incorrect answers
         const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-        
+
+        // Increments the score number if the answer is correct.
+        if (classToApply === "correct") {
+            incrementScore(correctBonus);
+        }
+
         selectedOption.parentElement.classList.add(classToApply);
         // 1 sec times before moving to the next question.
-        setTimeout (() => {
+        setTimeout(() => {
             selectedOption.parentElement.classList.remove(classToApply);
             // Gets new question after the answer.
-        getNewQuestion();
+            getNewQuestion();
         }, 1000);
     });
 });
 
+// Increments the score number.
+incrementScore = num => {
+    score += num;
+    scoreResult.innerText = score;
+
+}
 
 
 // Start game function.

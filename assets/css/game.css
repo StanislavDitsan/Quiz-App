@@ -35,5 +35,20 @@
     border: 1px solid rgb(255, 255, 255);
     outline-style: solid;
     outline-color: red;
-    background-color: rgba(255, 0, 0, 0.488) !important; 
+    background-color: rgba(255, 0, 0, 0.488) !important;
+}
+
+/* Heads up display */
+.hud-main-text {
+    text-align: center;
+}
+
+#hud {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hud-prefix {
+    font-size: 2.2rem;
+    font-family: 'Nosifer', cursive;
 }
