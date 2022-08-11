@@ -106,4 +106,40 @@ h1 {
 
 button {
     background-color: transparent;
+    border: none;
+}
+
+/* Form EndGame.html */
+
+form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input {
+    border: none;
+    margin-bottom: 1rem;
+    width: 20rem;
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+    color: black;
+    font-size: 3.5rem;
+    outline: none;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(249, 3, 3, 0.952);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.5s;
+    transition-property: transform;
+}
+
+input:hover,
+input:focus,
+input:active {
+    transform: scale(1.1);
 }
