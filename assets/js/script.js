@@ -1,3 +1,6 @@
+// Progress bar
+const progressBar = document.getElementById('progressBar');
+const progressBarFull = document.getElementById('progressBarFull')
 // Getting the reference to the question.
 const question = document.getElementById("question");
 // Converting this to an array.
@@ -85,6 +88,8 @@ getNewQuestion = () => {
     questionCounter++;
     // Updates question counter number.
     questionCounterResult.innerText = questionCounter + "/" + maxQuestions;
+    // Updates progress bar.
+    progressBarFull.style.width = `${(questionCounter / maxQuestions) * 100}%`;
 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];

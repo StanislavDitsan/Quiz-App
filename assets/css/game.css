@@ -16,11 +16,13 @@
 .option-prefix {
     color: rgba(255, 0, 0, 0.709);
     padding: 1.5rem 2.5rem;
+    font-size: xx-large;
 }
 
 .option-text {
     width: 100%;
     padding: 1.4rem;
+    font-size: xx-large;
 }
 
 /* Correct and wrong answers */
@@ -36,6 +38,25 @@
     outline-style: solid;
     outline-color: red;
     background-color: rgba(255, 0, 0, 0.488) !important;
+}
+
+
+
+/* Progress Bar */
+#progressBar {
+    margin-top: 6rem;
+    width: 20rem;
+    height: 3rem;
+    border: solid rgba(255, 255, 255, 0.678) 0.1rem;
+    border-radius: 1rem 1rem;
+}
+
+#progressBarFull {
+    height: 2.9rem;
+    width: 50%;
+    border: solid rgba(255, 255, 255, 0.678) 0.1rem;
+    border-radius: 0.9rem 1rem;
+    background-color: rgba(255, 0, 0, 0.488);
 }
 
 /* Heads up display */
