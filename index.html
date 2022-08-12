@@ -19,6 +19,21 @@
             <a class="btn" href="scores.html">Scores</a>
         </div>
     </div>
+    <script src="assets/js/jquery-3.6.0.js"></script>
+    <script src="assets/js/halloween-bats.js"></script>
+    <script>
+        var plugin = $.halloweenBats({
+            image: 'assets/images/bats.png', // Path to the image.
+            zIndex: 10000, // The z-index you need.
+            amount: 7, // Bat amount.
+            width: 35, // Image width.
+            height: 20, // Animation frame height.
+            frames: 4, // Amount of animation frames.
+            speed: 20, // Higher value = faster.
+            flickering: 15, // Higher value = slower.
+            target: 'body' // Target element
+        });
+    </script>
 </body>
 
 </html>
